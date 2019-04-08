@@ -10,3 +10,8 @@ neoANT-HILL is a python toolkit that integrates several pipelines for fully auto
 <pre><code>$ docker build -t neoanthill:1.0 /path/to/Dockerfile
 </code></pre>
 
+<p>Running the container:</p>
+
+<pre><code>$ docker run -v path/to/input:/home/biodocker/input -v path/to/output:/home/biodocker/output -p 8000:80 -it neoanthill:1.0 /bin/bash
+</code></pre>
+
