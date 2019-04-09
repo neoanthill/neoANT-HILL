@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 from flask import Flask, render_template, request
 import time
 import os
