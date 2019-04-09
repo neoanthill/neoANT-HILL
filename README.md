@@ -60,7 +60,7 @@ neoANT-HILL is a python toolkit that integrates several pipelines for fully auto
 <tbody>
 <tr>
 <td><code>variant_calling</code></td>
-<td>somatic mutations called from the RNAseq data</td>
+<td>Somatic mutations called from the RNAseq data</td>
 </tr>
 <tr>
 <td><code>mutations</code></td>
