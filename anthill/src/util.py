@@ -1,3 +1,5 @@
+/bin
+
 import sys
 from collections import defaultdict
 from os import listdir, path
