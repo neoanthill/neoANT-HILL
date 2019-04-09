@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 from mexceptions import NoMutatedFileWasFoundException, NoBindingPredictionFileWasFoundException, BindingPredictionException
 from os import listdir, path, makedirs, system, remove
 from collections import defaultdict
