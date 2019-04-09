@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import os
 import util
 from os import listdir
