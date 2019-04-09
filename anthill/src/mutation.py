@@ -1,6 +1,7 @@
+#!/usr/bin/python
+
 import util
 import re
-
 
 class Mutation:
 
