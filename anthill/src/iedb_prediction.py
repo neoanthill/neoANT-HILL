@@ -1,5 +1,3 @@
-#!/usr/bin/python
-
 from mexceptions import NoMutatedFileWasFoundException, NoBindingPredictionFileWasFoundException, BindingPredictionException
 from os import listdir, path, makedirs, system, remove
 from collections import defaultdict
@@ -43,15 +41,11 @@ def execute(opts):
 	    with open(mutations_path + f, "r") as st:
 	        line_fasta = []
                 for line in st:
-		    print "line"
-		    print line
                     if line.startswith(">"):
 		        text = line.replace(".", "_")
 		    else:
 		        text = line
 		    line_fasta.append(text)
-		print "line_fasta"
-		print "".join(line_fasta)
 	        pfasta_file = mutations_path + f
                 pfasta_out = open(pfasta_file, "w")
                 pfasta_out.write("".join(line_fasta))
@@ -260,7 +254,7 @@ def filter(opts):
             out.write("\n".join(not_filtered_results))
             out.close()
 
-    #system("rm -rf " + raw_predictions_path)
+    system("rm -rf " + raw_predictions_path)
 
     util.print_status(util.TASK_SUCCESS)
 
