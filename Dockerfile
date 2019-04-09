@@ -6,7 +6,8 @@
 #Description: Neoantigen NGS-based detector
 #Tags: (Immuno)Genomics
 #Build cmd = docker build -t neoanthill:1.0 <path-to-dockerfile>
-#Run cmd = docker run -v /path-to-docker-input:/biodocker/
+#Run cmd = docker run -v /path/to/input:/home/biodocker/input -v  /path/to/output:/home/biodocker/output -p 4000:80 -it neoanthill
+:1.0 /bin/bash
 ###############################################################################
 
 # Source Image
@@ -127,7 +128,7 @@ RUN wget https://downloads.iedb.org/tools/mhcii/2.17.5/IEDB_MHC_II-2.17.5.tar.gz
 && tar -xzvf IEDB_MHC_II-2.17.5.tar.gz \
 && rm IEDB_MHC_II-2.17.5.tar.gz
 
-COPY ant_hill /home/biodocker/neoanthill/
+COPY anthill /home/biodocker/neoanthill/
 
 WORKDIR /home/biodocker/neoanthill/
 
