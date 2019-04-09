@@ -6,8 +6,7 @@
 #Description: Neoantigen NGS-based detector
 #Tags: (Immuno)Genomics
 #Build cmd = docker build -t neoanthill:1.0 <path-to-dockerfile>
-#Run cmd = docker run -v /path/to/input:/home/biodocker/input -v  /path/to/output:/home/biodocker/output -p 4000:80 -it neoanthill
-:1.0 /bin/bash
+#Run cmd = docker run -v /path-to-docker-input:/biodocker/
 ###############################################################################
 
 # Source Image
@@ -49,7 +48,13 @@ pandas \
 flask \
 future \
 mygene \
-mhctools
+mhctools \
+markdown==3.0.1
+
+#mhcflurry download
+ENV MHCFLURRY_DOWNLOADS_CURRENT_RELEASE=1.2.0
+ENV MHCFLURRY_DATA_DIR=/tmp/
+RUN mhcflurry-downloads fetch
 
 #HLA Typing
 #OptiType dependecies
@@ -128,7 +133,7 @@ RUN wget https://downloads.iedb.org/tools/mhcii/2.17.5/IEDB_MHC_II-2.17.5.tar.gz
 && tar -xzvf IEDB_MHC_II-2.17.5.tar.gz \
 && rm IEDB_MHC_II-2.17.5.tar.gz
 
-COPY anthill /home/biodocker/neoanthill/
+COPY ant_hill /home/biodocker/neoanthill/
 
 WORKDIR /home/biodocker/neoanthill/
 
