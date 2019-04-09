@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import util
 import mygene
 import os
