@@ -139,7 +139,6 @@
 						    		<thead>
 						    			
 						    			<th>Gene</th>
-						    			<th>Variant</th>
 						    			<th>Annotation</th>
 						    			<th>Allele</th>
                                                                         <th>Length</th>
@@ -166,11 +165,7 @@
 								    					<!-- <a href="" data-toggle="modal" data-target="#{{index}}">{{row['gene']}}</a> -->
 								    				</td>
 
-								    				<!-- VARIANT -->
-								    				<td>
-								    					{{row['variant']}}
-								    				</td>
-
+								    				
 								    				<!-- ANNOTATION -->
 								    				<td>
 									    				{% if row['annotation'] == "frameshift_variant" %}
@@ -292,7 +287,6 @@
 						    		<thead>
 						    			
 						    			<th>Gene</th>
-						    			<th>Variant</th>
 						    			<th>Annotation</th>
 						    			<th>Allele</th>
 									<th>Length</th>
@@ -312,11 +306,6 @@
 								    				<!-- GENE -->
 								    				<td>
 								    					<a href="" data-toggle="modal" data-target="#{{index}}">{{row['gene']}}</a>
-								    				</td>
-
-								    				<!-- VARIANT -->
-								    				<td>
-								    					{{row['variant']}}
 								    				</td>
 
 								    				<!-- ANNOTATION -->
