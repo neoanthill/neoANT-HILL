@@ -32,13 +32,13 @@ neoANT-HILL is a python toolkit that integrates several pipelines for fully auto
 <li>Somatic Variant List (.VCF format) and/<strong>OR</strong> </li>
 <li>RNA-seq (Aligned and/or Raw)</li>  
 
-<p> RNA-seq files should match the following naming convention:  <li>sampleID{_1,2}.extension</li> </p>
+<p> RNA-seq files should match the following naming convention:  <em>sampleID{_1,2}.extension</em> </p>
 
 <p>where:</p>
 
-<strong>sampleID</strong> is the identifier of the sample;
-<strong>{_1,2}</strong> is the read pair in the paired-end samples (FASTQ)
-<strong>extension</strong> extension is the file extension eg. <pre><code>.sam, .bam, .fq, .fq.gz, .fastq.gz, etc.</code></pre>
+<p><strong>sampleID</strong> is the identifier of the sample;</p>
+<p><strong>{_1,2}</strong> is the read pair in the paired-end samples (FASTQ)</p>
+<p><strong>extension</strong> is the file extension eg. sam, bam, fastq, fastq.gz, etc.</p>
 
 <p>The samples names (.VCF) should match the name of RNA-seq files.</p> 
 
