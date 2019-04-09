@@ -1,5 +1,6 @@
-import util
+#!/usr/bin/python
 
+import util
 
 class MException(Exception):
     def __init__(self, msg):
