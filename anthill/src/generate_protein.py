@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import generate_report
 import os
 import util
