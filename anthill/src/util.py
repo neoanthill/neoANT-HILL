@@ -204,8 +204,8 @@ def read_predicted_alleles(outpath):
     p_allele = defaultdict(list)
     str_result = ""
     for file in files:
-        if file.endswith("_result.tsv"):
-            sample = file.split("_result.tsv")[0]
+        if file.endswith(".tsv"):
+            sample = file.split(".tsv")[0]
             with open(outpath + file, "r") as f:
                 f.readline()
                 for line in f:
