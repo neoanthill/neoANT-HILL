@@ -45,14 +45,16 @@ def execute(opts):
             for i in line[1:7]:
                 a.add(i.replace("A*", "HLA-A*").replace("B*", "HLA-B*").replace("C*", "HLA-C*"))
 
-    out = open(output + sample + "_result.tsv", "w")
+    out = open(output + sample + ".tsv", "w")
     out.write(("allele") + "\n")
     out.write("\n".join(a))
     out.close()
-
+    
+    system("rm -f " + output + sample + "_result.tsv")
+    
     for p, d, files in os.walk(output):
         for y in files:
-            if not y.endswith("_result.tsv"):
+            if not y.endswith(".tsv"):
                 system("rm -f " + os.path.join(p, y))
-
+   
     util.print_status(util.TASK_SUCCESS)
