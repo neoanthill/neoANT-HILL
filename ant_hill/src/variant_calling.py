@@ -88,8 +88,8 @@ def annotate(vcf_info):
         for i in file:
             if i.endswith((".vcf", ".vcf.gz")):
                 vcf_info = vcf_info
-                cmd = "java -jar " + snpEff + " ann -noLog -canon -no-downstream -no-intergenic -no-intron -no-upstream -no-utr -noStats GRCh37.p13.RefSeq " + i + " > " + i + ".int"
-                cmd2 = "java -jar " + snpsift + " filter \" (ANN[*].BIOTYPE has 'protein_coding')\" " +  i + ".int > " + i + ".annotated"
+                cmd = "java  -Xmx2g -jar " + snpEff + " ann -noLog -canon -no-downstream -no-intergenic -no-intron -no-upstream -no-utr -noStats GRCh37.p13.RefSeq " + i + " > " + i + ".int"
+                cmd2 = "java  -Xmx2g -jar " + snpsift + " filter \" (ANN[*].BIOTYPE has 'protein_coding')\" " +  i + ".int > " + i + ".annotated"
                 try:
                     system(cmd)
                     system(cmd2)
@@ -97,15 +97,15 @@ def annotate(vcf_info):
                         raise VCFAnnotationFailed(str(e))
     else:
         if os.path.isfile(vcf_info):
-            cmd = "java -Xmx4g -jar " + snpEff + " ann -noLog -canon -no-downstream -no-intergenic -no-intron -no-upstream -no-utr -noStats GRCh37.p13.RefSeq " + vcf_info + " > " + vcf_info + ".int"
-            cmd2 = "java -Xmx4g -jar " + snpsift + " filter \" (ANN[*].BIOTYPE has 'protein_coding')\" " + vcf_info + ".int > " + vcf_info + ".annotated"
+            cmd = "java -Xmx2g -jar " + snpEff + " ann -noLog -canon -no-downstream -no-intergenic -no-intron -no-upstream -no-utr -noStats GRCh37.p13.RefSeq " + vcf_info + " > " + vcf_info + ".int"
+            cmd2 = "java -Xmx2g -jar " + snpsift + " filter \" (ANN[*].BIOTYPE has 'protein_coding')\" " + vcf_info + ".int > " + vcf_info + ".annotated"
             vcf_info = vcf_info + ".annotated"
             try:
                 system(cmd)
                 system(cmd2)
             except Exception as e:
                 raise VCFAnnotationFailed(str(e))
-
+                
     util.print_task(util.TASK_SUCCESS)
 
     return vcf_info
