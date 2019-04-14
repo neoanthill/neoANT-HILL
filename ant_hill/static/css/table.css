@@ -96,5 +96,9 @@ nav .active{
 }
 
 #ctgene {
-  color: blue;
+	color: blue;
+}
+
+.tab-content {
+	overflow: auto;
 }
