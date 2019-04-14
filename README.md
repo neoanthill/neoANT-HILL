@@ -96,19 +96,19 @@
 
 <h2><a id="user-content-installation-pip" class="anchor" aria-hidden="true" href="#installation-pip"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>References </h2>
 
-<p>1. MCKENNA, Aaron et al. The Genome Analysis Toolkit: a MapReduce framework for analyzing next-generation DNA sequencing data. Genome research, v. 20, n. 9, p. 1297-1303, 2010.</p>
+<p align="justify">1. MCKENNA, Aaron et al. The Genome Analysis Toolkit: a MapReduce framework for analyzing next-generation DNA sequencing data. Genome research, v. 20, n. 9, p. 1297-1303, 2010.</p>
 
-<p>2. CINGOLANI, Pablo et al. A program for annotating and predicting the effects of single nucleotide polymorphisms, SnpEff: SNPs in the genome of Drosophila melanogaster strain w1118; iso-2; iso-3. Fly, v. 6, n. 2, p. 80-92, 2012.</p>
+<p align="justify">2. CINGOLANI, Pablo et al. A program for annotating and predicting the effects of single nucleotide polymorphisms, SnpEff: SNPs in the genome of Drosophila melanogaster strain w1118; iso-2; iso-3. Fly, v. 6, n. 2, p. 80-92, 2012.</p>
 
-<p>3. VITA, Randi et al. The immune epitope database (IEDB): 2018 update. Nucleic acids research, v. 47, n. D1, p. D339-D343, 2018.</p>
+<p align="justify">3. VITA, Randi et al. The immune epitope database (IEDB): 2018 update. Nucleic acids research, v. 47, n. D1, p. D339-D343, 2018.</p>
 
-<p>4. O'DONNELL, Timothy J. et al. MHCflurry: open-source class I MHC binding affinity prediction. Cell systems, v. 7, n. 1, p. 129-132. e4, 2018.</p>
+<p align="justify">4. O'DONNELL, Timothy J. et al. MHCflurry: open-source class I MHC binding affinity prediction. Cell systems, v. 7, n. 1, p. 129-132. e4, 2018.</p>
 
-<p>5. BRAY, Nicolas L. et al. Near-optimal probabilistic RNA-seq quantification. Nature biotechnology, v. 34, n. 5, p. 525, 2016.</p>
+<p align="justify">5. BRAY, Nicolas L. et al. Near-optimal probabilistic RNA-seq quantification. Nature biotechnology, v. 34, n. 5, p. 525, 2016.</p>
 
-<p>6. SZOLEK, András et al. OptiType: precision HLA typing from next-generation sequencing data. Bioinformatics, v. 30, n. 23, p. 3310-3316, 2014.</p>
+<p align="justify">6. SZOLEK, András et al. OptiType: precision HLA typing from next-generation sequencing data. Bioinformatics, v. 30, n. 23, p. 3310-3316, 2014.</p>
 
-<p>7. FINOTELLO, Francesca et al. quanTIseq: quantifying immune contexture of human tumors. BioRxiv, 2017.</p>
+<p align="justify">7. FINOTELLO, Francesca et al. quanTIseq: quantifying immune contexture of human tumors. BioRxiv, 2017.</p>
 
 <h2><a id="user-content-installation-pip" class="anchor" aria-hidden="true" href="#installation-pip"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Limitations </h2>
 
