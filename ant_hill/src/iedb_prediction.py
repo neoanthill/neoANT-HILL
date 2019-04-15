@@ -60,10 +60,10 @@ def execute(opts):
 		if method == "mhcflurry":
 			cmds.append("mhctools --mhc-predictor mhcflurry --input-fasta-file " +  mutations_path + f + " --extract-subsequences --mhc-alleles "  + ",".join(hlas) + " --mhc-peptide-lengths " +  ",".join(pl) + " --output-csv " + output_file)
 		else:
-                	cmds.append("python " + util.PREDICTION_CLASS_COMMAND[p_class] + method.split("_")[1] + " \"" + ",".join(hlas) + \
+                	cmds.append("python " + util.PREDICTION_CLASS_COMMAND[p_class] + method.split("iedb_")[1] + " \"" + ",".join(hlas) + \
                         	    "\" " + ",".join(pl) + " " + mutations_path + f + " >> " + output_file)
             else:
-                cmds.append("python " + util.PREDICTION_CLASS_COMMAND[p_class] + method.split("_")[1] + " " + ",".join(hlas) + \
+                cmds.append("python " + util.PREDICTION_CLASS_COMMAND[p_class] + method.split("iedb_")[1] + " " + ",".join(hlas) + \
                             " " + mutations_path + f + " >> " + output_file)
 
     if parallel:
