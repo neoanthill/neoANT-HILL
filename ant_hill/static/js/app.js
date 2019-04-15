@@ -101,7 +101,11 @@ $(document).ready(function(){
 
                 window.location.replace("/?status=" + msg["status"]);
                 
-            } else {
+            } else if(msg["status"] == "warning") {
+
+                window.location.replace("/?status=" + msg["status"]); 
+		    
+	    } else {
 
                 $.notify({
                     message: msg["message"]
