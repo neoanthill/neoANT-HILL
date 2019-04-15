@@ -97,9 +97,13 @@ def binding_prediction():
 			opts = options.handle(request.form)
 
 			iedb_prediction.execute(opts)
-			iedb_prediction.filter(opts)
+			filter = iedb_prediction.filter(opts)
 
-			message = { "status": "success" }
+			if filter:
+			    message = { "status": "success" }
+			else:
+			    message = { "status": "warning" }
+			
 			util.save_log(opts)
 
 		except Exception as e:
