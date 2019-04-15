@@ -253,6 +253,9 @@ def filter(opts):
             out.write(nf_header + "\n")
             out.write("\n".join(not_filtered_results))
             out.close()
+	    return True
+	else:
+	    return False
 
     system("rm -rf " + raw_predictions_path)
 
