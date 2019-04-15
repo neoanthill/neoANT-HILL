@@ -359,6 +359,15 @@
                     },{
                         type: "info"
                     });
+                 
+                {% elif status == "warning" %}
+                    $.notify({
+                        message: "WARNING: Binding Prediction is complete. However, peptides did not match any filtering condition."
+                    },{
+                        type: "danger"
+                    });
+                  
+                 
                 {% else %}
                     $.notify({
                         message: "Something went wrog with the Binding Prediction. Please, check your inputs and try again."
