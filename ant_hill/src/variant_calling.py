@@ -20,7 +20,7 @@ def execute(opts):
     dbsnp = util.DBSNP
     mills = util.MILLS
     known = util.KNOWN
-    gnomad = util.GNOMAD
+#    gnomad = util.GNOMAD
 
     variants = os.path.dirname(output)
     if not os.path.exists(variants):
@@ -28,18 +28,17 @@ def execute(opts):
 
     ids = defaultdict(list)
 
-    file = [f for f in listdir(input) if path.isfile(path.join(input, f))]
-
     if not file:
         raise InputFileNotExistException(input)
 
-    for f in file:
+    for f in input:
         if f.endswith((".sam", ".bam")):
-            Sample = f.split(".")[0]
-            ids[Sample].append(path.join(input, f))
-
+            file =  os.path.split(f)[1]
+            sample = file.split(".")[0]
+            ids[sample].append(f)
+            
     for sample in ids.keys():
-        cmd1 = gatk + " AddOrReplaceReadGroups -I " + " ".join(ids[Sample]) + " -O " + sample + ".sorted.bam --SORT_ORDER coordinate --RGID " + sample + \
+        cmd1 = gatk + " AddOrReplaceReadGroups -I " + " ".join(ids[sample]) + " -O " + output + sample + ".sorted.bam --SORT_ORDER coordinate --RGID " + sample + \
                " --RGLB Lib1 --RGPL Illumina --RGPU Barcode --RGSM " + sample
         cmd2 = gatk + " MarkDuplicates -I " + output + sample + ".sorted.bam -O " + output + sample + ".dedupped.bam --CREATE_INDEX true --VALIDATION_STRINGENCY SILENT --METRICS_FILE " + \
                output + sample + ".metrics.txt"
