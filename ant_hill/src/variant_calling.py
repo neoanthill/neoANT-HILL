@@ -28,9 +28,6 @@ def execute(opts):
 
     ids = defaultdict(list)
 
-    if not file:
-        raise InputFileNotExistException(input)
-
     for f in input:
         if f.endswith((".sam", ".bam")):
             file =  os.path.split(f)[1]
