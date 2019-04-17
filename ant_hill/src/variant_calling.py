@@ -44,7 +44,7 @@ def execute(opts):
                dbsnp + " --known-sites " + mills + " --known-sites " + known + " -O " + output + sample + ".BaseRecalReport.grp"
         cmd5 = gatk + " ApplyBQSR -R " + ref_genome + " -I " + output + sample + ".split.bam --add-output-sam-program-record --bqsr-recal-file " + \
         output + sample + ".BaseRecalReport.grp -O " + output + sample + ".recalibrated.bam"
-        cmd6 = gatk + " Mutect2 -R " + ref_genome + " -I " + output + sample + ".recalibrated.bam -tumor " + sample + " --germline-resource " + gnomad + \
+        cmd6 = gatk + " Mutect2 -R " + ref_genome + " -I " + output + sample + ".recalibrated.bam -tumor " + sample +  \
         " -stand-call-conf 20 --annotation Coverage --annotation DepthPerAlleleBySample --annotation BaseQuality --annotation ReadPosition --annotation MappingQuality " + \
         "--dont-use-soft-clipped-bases true -O " + output + sample + ".vcf.gz"			
         cmd7 = gatk + " FilterMutectCalls -V " +  output + sample + ".vcf.gz --max-alt-allele-count 2 --min-median-read-position 5 -O " +  output + sample + ".vcf.gz"
