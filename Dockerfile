@@ -137,6 +137,11 @@ COPY ant_hill /home/biodocker/neoanthill/
 
 WORKDIR /home/biodocker/neoanthill/
 
+##download-data
+
+RUN wget http://bioinformatics-brazil.org/~carolcoelho/neoanthill/protein_refseq.fasta -O /home/biodocker/neoanthill/data/protein_refseq.fasta
+RUN wget http://bioinformatics-brazil.org/~carolcoelho/neoanthill/transcript_refseq.fasta -O /home/biodocker/neoanthill/data/transcript_refseq.fasta
+
 EXPOSE 80
 
 
