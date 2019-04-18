@@ -80,7 +80,7 @@ def annotate(vcf_info):
     snpsift = util.SNPSIFT
 
     if os.path.isdir(vcf_info):
-        file = [f for f in listdir(vcf_info) if path.isfile(path.join(vcf_info, f))]
+        file = [path.join(vcf_info, f) for f in listdir(vcf_info) if path.isfile(path.join(vcf_info, f))]
         for i in file:
             if i.endswith((".vcf", ".vcf.gz")):
                 vcf_info = vcf_info
