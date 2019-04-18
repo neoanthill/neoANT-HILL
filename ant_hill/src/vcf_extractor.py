@@ -4,6 +4,8 @@ import util
 import mygene
 import os
 import pandas as pd
+from os import listdir
+from os import path
 from mexceptions import VCFWrongFormat
 
 def extract(vcf_info):
@@ -16,7 +18,7 @@ def extract(vcf_info):
     out_string = []
 
     if os.path.isdir(vcf_info):
-        files = [f for f in listdir(vcf_info) if path.isfile(path.join(vcf_info, f))]
+        files = [path.join(vcf_info, f) for f in listdir(vcf_info) if path.isfile(path.join(vcf_info, f))]
     else:
         files = []
         files.append(vcf_info)
