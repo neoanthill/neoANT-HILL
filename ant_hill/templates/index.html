@@ -99,7 +99,7 @@
                                     <div class="form-group">
                                         <select class="form-control" id="input-type">
                                             <option value="vcf">VCF</option>
-                                            <option value="bam">SAM/BAM(RNA-seq)</option>
+                                            <option value="bam">BAM (RNA-seq)</option>
                                         </select>
                                     </div>
 
@@ -111,21 +111,8 @@
 
                                     <div id="bam-input" style="display: none;">
                                         <div class="form-group">
-                                            <input class="input-step1" type="file" id="bam" accept=".bam, .sam" multiple/>
+                                            <input class="input-step1" type="file" id="bam" accept=".bam" multiple/>
                                         </div>
-                                    </div>
-
-                                    <div id="genome-input" style="display: none;">
-                                        <hr/>
-                                        <h5>
-                                            Genome
-                                            <span class="badge badge-info" data-toggle="tooltip" data-placement="right" title="Select the genome assembly">?</span> 
-                                        </h5>
-                                        </br>
-                                        <select class="form-control" id="input-genome">
-                                            <option value="GRCh37">GRCh37</option>
-                                            <option value="GRCh38">GRCh38</option>
-                                        </select>
                                     </div>
 
                                     <hr/>
