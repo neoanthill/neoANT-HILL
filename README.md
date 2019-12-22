@@ -90,7 +90,7 @@
 <li>snpEff</li>  
 <li>IEDB class I</li>
 <li>IEDB class II</li>
-<p align=justify>
+<p align="justify">
  
  By using the IEDB software, you are consenting to be bound by and become a "Licensee" for the use of IEDB tools and are consenting to the terms and conditions of the Non-Profit Open Software License ("Non-Profit OSL") version 3.0
 
