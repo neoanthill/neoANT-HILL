@@ -88,11 +88,10 @@
 
 <li>GATK 4.0</li>
 <li>snpEff</li>  
-<li>IEDB class I</li>
-<li>IEDB class II</li>
+<li>IEDB</li>
 <p align="justify">
  
-By using the IEDB software, you are consenting to be bound by and become a "Licensee" for the use of IEDB tools and are consenting to the terms and conditions of the Non-Profit Open Software License ("Non-Profit OSL") version 3.0
+#By using the IEDB software, you are consenting to be bound by and become a "Licensee" for the use of IEDB tools and are consenting to the terms and conditions of the Non-Profit Open Software License ("Non-Profit OSL") version 3.0
 
 Please read these two license agreements <a href="http://tools.iedb.org/mhci/download/">here</a> before proceeding. If you do not agree to all of the terms of these two agreements, you must not install or use the product. Companies (for-profit entities) interested in downloading the command-line versions of the IEDB tools or running the entire analysis resource locally, should contact us (license@iedb.org) for details on licensing options.
 
