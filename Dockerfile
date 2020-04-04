@@ -137,6 +137,9 @@ COPY ant_hill /home/biodocker/neoanthill/
 
 WORKDIR /home/biodocker/neoanthill/
 
+RUN gunzip data/protein_refseq.fasta.gz \
+&& gunzip data/transcript_refseq.fasta.gz 
+
 ##download-data
 
 #RUN wget http://www.bioinformatics-brazil.org/~carolcoelho/neoanthill/protein_refseq.fasta -O /home/biodocker/neoanthill/data/protein_refseq.fasta
