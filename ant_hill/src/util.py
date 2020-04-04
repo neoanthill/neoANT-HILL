@@ -82,8 +82,8 @@ DBSNP = ABSOLUTE_PATH + "data/dbsnp_138.b37.vcf.gz"
 MILLS = ABSOLUTE_PATH + "data/Mills_and_1000G_gold_standard.indels.b37.vcf.gz"
 KNOWN = ABSOLUTE_PATH + "data/1000G_phase1.indels.b37.vcf.gz"
 GENOME_FASTA_FILE = ABSOLUTE_PATH + "data/Homo_sapiens.GRCh37.fa"
-REFSEQ_TRANSCRIPTS_FASTA = ABSOLUTE_PATH + "data/transcript_refseq.fasta.gz"
-REFSEQ_HUMAN_FASTA = ABSOLUTE_PATH + "data/protein_refseq.fasta.gz"
+REFSEQ_TRANSCRIPTS_FASTA = ABSOLUTE_PATH + "data/transcript_refseq.fasta"
+REFSEQ_HUMAN_FASTA = ABSOLUTE_PATH + "data/protein_refseq.fasta"
 HUMAN_TRANSCRIPTS_INDEX = ABSOLUTE_PATH +"data/human_transcript_index"
 DEFAULT_ALLELE_LIST = [0, ABSOLUTE_PATH + "data/hla_class_i.alleles", ABSOLUTE_PATH + "data/hla_class_ii.alleles"]
 
