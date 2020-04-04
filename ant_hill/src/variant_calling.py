@@ -46,8 +46,8 @@ def execute(opts):
         output + sample + ".BaseRecalReport.grp -O " + output + sample + ".recalibrated.bam"
         cmd6 = gatk + " Mutect2 -R " + ref_genome + " -I " + output + sample + ".recalibrated.bam -tumor " + sample +  \
         " -stand-call-conf 20 --annotation Coverage --annotation DepthPerAlleleBySample --annotation BaseQuality --annotation ReadPosition --annotation MappingQuality " + \
-        "--dont-use-soft-clipped-bases true -O " + output + sample + ".vcf.gz"			
-        cmd7 = gatk + " FilterMutectCalls -V " +  output + sample + ".vcf.gz --max-alt-allele-count 2 --min-median-read-position 5 -O " +  output + sample + ".vcf.gz"
+        "--dont-use-soft-clipped-bases true -O " + output + sample + ".vcf2.gz"			
+        cmd7 = gatk + " FilterMutectCalls -V " +  output + sample + ".vcf2.gz --max-alt-allele-count 2 --min-median-read-position 5 -O " +  output + sample + ".vcf.gz"
 
         try:
             system(cmd1)
