@@ -142,9 +142,15 @@ RUN gunzip data/protein_refseq.fasta.gz \
 
 ##download-data
 
-#RUN wget ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/b37/Mills_and_1000G_gold_standard.indels.b37.vcf.gz \
-#&& wget ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/b37/dbsnp_138.b37.vcf.gz \
-#&&
+RUN wget https://github.com/pachterlab/kallisto-transcriptome-indices/releases/download/ensembl-96/homo_sapiens.tar.gz -O data/homo_sapiens.tar.gz \
+&& tar -xvzf data/homo_sapiens.tar.gz --strip-components 1 \
+&& mv transcriptome.idx data/human_transcript_index \
+&& rm Homo_sapiens.* && rm transcripts_to_genes.txt \
+&& rm data/homo_sapiens.tar.gz
+
+RUN wget ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/b37/Mills_and_1000G_gold_standard.indels.b37.vcf.gz -P data/ \
+&& wget ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/b37/dbsnp_138.b37.vcf.gz -P data/ \
+&& wget ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/b37/1000G_phase1.indels.b37.vcf.gz -P data/ 
 
 #RUN wget http://www.bioinformatics-brazil.org/~carolcoelho/neoanthill/protein_refseq.fasta -O /home/biodocker/neoanthill/data/protein_refseq.fasta
 #RUN wget http://www.bioinformatics-brazil.org/~carolcoelho/neoanthill/transcript_refseq.fasta -O /home/biodocker/neoanthill/data/transcript_refseq.fasta
