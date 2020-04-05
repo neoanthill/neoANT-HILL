@@ -114,11 +114,14 @@ RUN wget http://sourceforge.net/projects/snpeff/files/snpEff_latest_core.zip \
 && rm snpEff_latest_core.zip
 
 #installing QUANTISEQ
-ADD dependencies.R /tmp/
+RUN git clone https://github.com/icbi-lab/quanTIseq.git
+
 RUN ln -s /usr/lib/x86_64-linux-gnu/libgfortran.so.3 /usr/lib/libgfortran.so
 RUN ln -s /usr/lib/x86_64-linux-gnu/libquadmath.so.0 /usr/lib/libquadmath.so
-RUN Rscript /tmp/dependencies.R
-COPY quantiseq /home/biodocker/quantiseq
+
+RUN Rscript quanTIseq/dependencies.R
+RUN sed -i 's/\/opt/\/home\/biodocker/g' quanTIseq/quantiseq/deconvolution/*
+RUN cp -r quanTIseq/quantiseq /home/biodocker
 
 RUN mkdir iedb
 WORKDIR /home/biodocker/iedb/
@@ -150,7 +153,9 @@ RUN wget https://github.com/pachterlab/kallisto-transcriptome-indices/releases/d
 
 RUN wget ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/b37/Mills_and_1000G_gold_standard.indels.b37.vcf.gz -P data/ \
 && wget ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/b37/dbsnp_138.b37.vcf.gz -P data/ \
-&& wget ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/b37/1000G_phase1.indels.b37.vcf.gz -P data/ 
+&& wget ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/b37/1000G_phase1.indels.b37.vcf.gz -P data/  \
+&& wget ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/b37/human_g1k_v37.fasta.gz -O data/Homo_sapiens.GRCh37.fa.gz \
+&& gunzip data/Homo_sapiens.GRCh37.fa.gz
 
 #RUN wget http://www.bioinformatics-brazil.org/~carolcoelho/neoanthill/protein_refseq.fasta -O /home/biodocker/neoanthill/data/protein_refseq.fasta
 #RUN wget http://www.bioinformatics-brazil.org/~carolcoelho/neoanthill/transcript_refseq.fasta -O /home/biodocker/neoanthill/data/transcript_refseq.fasta
