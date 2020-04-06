@@ -43,7 +43,7 @@ def extract(vcf_info):
                             try:
                                 infos = linesplit[7].split(",")
                                 for i in infos:
-                                    if (i.find("ANN=") > 0) and ( (i.find("frameshift_variant") > 0) or (i.find("missense_variant") > 0) or (i.find("inframe_insertion") > 0) or (i.find("inframe_deletion") > 0) ):
+                                    if (i.find("ANN=") > 0) and ( (i.find("frameshift_variant") > 0) or (i.find("missense_variant") > 0) or (i.find("\b(inframe_insertion)") > 0) or (i.find("\b(inframe_deletion)") > 0) ):
                                         mut = i.split("ANN=")[-1]
                                         infosplit = mut.split("|")
                                         for key in samples.keys():
