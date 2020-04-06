@@ -152,9 +152,12 @@ RUN wget https://github.com/pachterlab/kallisto-transcriptome-indices/releases/d
 && rm data/homo_sapiens.tar.gz
 
 RUN wget ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/b37/Mills_and_1000G_gold_standard.indels.b37.vcf.gz -P data/ \
+&& guzip data/Mills_and_1000G_gold_standard.indels.b37.vcf.gz && bgzip data/Mills_and_1000G_gold_standard.indels.b37.vcf.gz \
 && wget ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/b37/dbsnp_138.b37.vcf.gz -P data/ \
-&& wget ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/b37/1000G_phase1.indels.b37.vcf.gz -P data/  \
-&& wget ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/b37/human_g1k_v37.fasta.gz -O data/Homo_sapiens.GRCh37.fa.gz \
+&& guzip data/dbsnp_138.b37.vcf.gz && bgzip data/dbsnp_138.b37.vcf.gz \
+&& wget ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/b37/1000G_phase1.indels.b37.vcf.gz -P data/ \
+&& guzip data/1000G_phase1.indels.b37.vcf.gz && bgzip data/1000G_phase1.indels.b37.vcf.gz \
+&& wget ftp://ftp.ensembl.org/pub/grch37/current/fasta/homo_sapiens/dna/Homo_sapiens.GRCh37.dna.primary_assembly.fa.gz -O data/Homo_sapiens.GRCh37.fa.gz \
 && gunzip data/Homo_sapiens.GRCh37.fa.gz
 
 #RUN wget http://www.bioinformatics-brazil.org/~carolcoelho/neoanthill/protein_refseq.fasta -O /home/biodocker/neoanthill/data/protein_refseq.fasta
