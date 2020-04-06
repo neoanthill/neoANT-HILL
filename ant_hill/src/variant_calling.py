@@ -20,7 +20,6 @@ def execute(opts):
     dbsnp = util.DBSNP
     mills = util.MILLS
     known = util.KNOWN
-#    gnomad = util.GNOMAD
 
     variants = os.path.dirname(output)
     if not os.path.exists(variants):
@@ -66,7 +65,7 @@ def execute(opts):
 
     for a in rf:
         if not a.endswith((".vcf.gz", ".tbi")):
-            system("rm -f " + a)
+            system("rm -f " + path.join(variants, a))
 
     util.print_task(util.TASK_SUCCESS)
 
