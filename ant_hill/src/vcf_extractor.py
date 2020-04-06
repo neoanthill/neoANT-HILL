@@ -63,6 +63,7 @@ def extract(vcf_info):
     df = pd.DataFrame([sub.split("\t") for sub in sorted_out_string], columns=["Sample", "Annotation", "Gene", "Transcript", "HGVS.c", "HGVS.p", "Variant", "Genotype"]).drop_duplicates()
     df = df[df['Transcript'].str.contains('NM')]
     df['Transcript'] = df['Transcript'].str.split('.').str[0]
+    df["Genotype"] = df["Genotype"].replace("\|", "/", regex=True)
     df.to_csv(out_file, sep='\t', index=False) 
 
     util.print_status(util.TASK_SUCCESS)
