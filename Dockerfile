@@ -189,7 +189,7 @@ RUN wget ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/b37/Mills_and_1
 && wget ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/b37/dbsnp_138.b37.vcf.gz -P data/ \
 && gunzip data/dbsnp_138.b37.vcf.gz && bgzip data/dbsnp_138.b37.vcf \
 && wget ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/b37/1000G_phase1.indels.b37.vcf.gz -P data/ \
-&& gunzip data/1000G_phase1.indels.b37.vcf.gz && bgzip data/1000G_phase1.indels.b37.vcf.gz \
+&& gunzip data/1000G_phase1.indels.b37.vcf.gz && bgzip data/1000G_phase1.indels.b37.vcf \
 && wget ftp://ftp.ensembl.org/pub/grch37/current/fasta/homo_sapiens/dna/Homo_sapiens.GRCh37.dna.primary_assembly.fa.gz -O data/Homo_sapiens.GRCh37.fa.gz \
 && gunzip data/Homo_sapiens.GRCh37.fa.gz
 
