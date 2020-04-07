@@ -51,6 +51,39 @@ mygene \
 mhctools \
 markdown==3.0.1
 
+### Installing samtools/htslib/tabix/bgzip
+
+ENV VERSIONH 1.2.1-254-6462e34
+ENV NAMEH htslib
+ENV SHA1H "6462e349d16e83db8647272e4b98d2a92992071f"
+
+ENV VERSION 1.2-242-4d56437
+ENV NAME "samtools"
+ENV SHA1 "4d56437320ad370eb0b48c204ccec7c73f653393"
+
+RUN git clone https://github.com/samtools/htslib.git && \
+    cd ${NAMEH} && \
+    git reset --hard ${SHA1H} && \
+    make -j 4 && \
+    cd .. && \
+    cp ./${NAMEH}/tabix /usr/local/bin/ && \
+    cp ./${NAMEH}/bgzip /usr/local/bin/ && \
+    cp ./${NAMEH}/htsfile /usr/local/bin/ && \
+    strip /usr/local/bin/tabix; true && \
+    strip /usr/local/bin/bgzip; true && \
+    strip /usr/local/bin/htsfile; true && \
+
+git clone https://github.com/samtools/samtools.git && \
+    cd ${NAME} && \
+    git reset --hard ${SHA1} && \
+    make -j 4 && \
+    cp ./${NAME} /usr/local/bin/ && \
+    cd .. && \
+    strip /usr/local/bin/${NAME}; true && \
+    rm -rf ./${NAMEH}/ && \
+    rm -rf ./${NAME}/ && \
+    rm -rf ./${NAMEH}
+
 #mhcflurry download
 ENV MHCFLURRY_DOWNLOADS_CURRENT_RELEASE=1.2.0
 ENV MHCFLURRY_DATA_DIR=/tmp/
@@ -152,8 +185,11 @@ RUN wget https://github.com/pachterlab/kallisto-transcriptome-indices/releases/d
 && rm data/homo_sapiens.tar.gz
 
 RUN wget ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/b37/Mills_and_1000G_gold_standard.indels.b37.vcf.gz -P data/ \
+&& gunzip data/Mills_and_1000G_gold_standard.indels.b37.vcf.gz && bgzip data/Mills_and_1000G_gold_standard.indels.b37.vcf \
 && wget ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/b37/dbsnp_138.b37.vcf.gz -P data/ \
+&& gunzip data/dbsnp_138.b37.vcf.gz && bgzip data/dbsnp_138.b37.vcf \
 && wget ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/b37/1000G_phase1.indels.b37.vcf.gz -P data/ \
+&& gunzip data/1000G_phase1.indels.b37.vcf.gz && bgzip data/1000G_phase1.indels.b37.vcf.gz \
 && wget ftp://ftp.ensembl.org/pub/grch37/current/fasta/homo_sapiens/dna/Homo_sapiens.GRCh37.dna.primary_assembly.fa.gz -O data/Homo_sapiens.GRCh37.fa.gz \
 && gunzip data/Homo_sapiens.GRCh37.fa.gz
 
