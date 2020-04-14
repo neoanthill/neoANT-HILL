@@ -36,7 +36,7 @@ def execute(opts):
         if f.startswith("."):
             continue
 
-	# Teste Total
+	
 	if method == "mhcflurry":
 	    with open(mutations_path + f, "r") as st:
 	        line_fasta = []
@@ -111,6 +111,8 @@ def filter(opts):
     if not files:
         raise NoBindingPredictionFileWasFoundException
 
+    filtered_results = False
+	
     for f in files:
         header_to_id = {}
         filtered_results = set()
@@ -253,12 +255,14 @@ def filter(opts):
             out.write(nf_header + "\n")
             out.write("\n".join(not_filtered_results))
             out.close()
-	    return True
-	else:
-	    return False
+	    filtered_results = True
 
     system("rm -rf " + raw_predictions_path)
 
-    util.print_status(util.TASK_SUCCESS)
+    if filtered_results:
+    	util.print_status(util.TASK_SUCCESS)
+	return True
+    else:
+	return False
 
 
